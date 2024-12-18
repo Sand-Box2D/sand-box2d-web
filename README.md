@@ -1,3 +1,5 @@
+[![Deploy](https://github.com/sand-box2d/sb2d-web/actions/workflows/deploy.yml/badge.svg)](https://github.com/sand-box2d/sb2d-web/actions/workflows/deploy.yml)
+
 # Sand-Box2D Website
 The Sand-Box2D website containing all the user levels.
 
