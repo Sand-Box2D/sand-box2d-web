@@ -1,5 +1,9 @@
 name: Deploy
-on: [push, pull_request]
+
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   vercel-deploy:
@@ -7,14 +11,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install Vercel CLI
+      - name: Checkout project
+        uses: actions/checkout@v4
+
+      - name: Install utils
         run: |
           npm install --global vercel@latest
+          npm install --global pnpm@latest
 
-      - name: Build
+      - name: Install dependencies
         run: |
           pnpm install
-          pnpm build
 
       - name: Deploy
         run: |
