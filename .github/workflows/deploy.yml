@@ -1,0 +1,16 @@
+name: Deploy
+on: [push, pull_request]
+
+jobs:
+  vercel-deploy:
+    name: Vercel Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install Vercel CLI
+        run: |
+          npm install --global vercel@latest
+
+      - name: Deploy
+        run: |
+          vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
