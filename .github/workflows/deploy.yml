@@ -19,10 +19,6 @@ jobs:
           npm install --global vercel@latest
           npm install --global pnpm@latest
 
-      - name: Install dependencies
-        run: |
-          pnpm install
-
       - name: Deploy
         run: |
           vercel --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
