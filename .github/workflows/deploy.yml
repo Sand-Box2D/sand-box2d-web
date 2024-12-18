@@ -11,6 +11,10 @@ jobs:
         run: |
           npm install --global vercel@latest
 
+      - name: Build
+        run: |
+          vercel build --yes --prod --token=${{ secrets.VERCEL_TOKEN }}
+
       - name: Deploy
         run: |
           vercel --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
