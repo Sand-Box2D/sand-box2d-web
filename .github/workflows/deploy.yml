@@ -14,10 +14,9 @@ jobs:
       - name: Checkout project
         uses: actions/checkout@v4
 
-      - name: Install utils
+      - name: Install Vercel CLI
         run: |
           npm install --global vercel@latest
-          npm install --global pnpm@latest
 
       - name: Deploy
         run: |
